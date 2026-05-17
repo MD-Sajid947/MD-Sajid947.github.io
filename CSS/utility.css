@@ -1583,124 +1583,76 @@ input[type="text"]:focus {
     }
 }
 /* ===== MOBILE PLAYBAR COMPLETE FIX ===== */
-@media (max-width: 1000px) {
+@media (max-width:1000px){
 
-    /* Make playbar stack vertically */
-    .playbar {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        padding: 6px 0 !important;
-        box-sizing: border-box !important;
+    .playbar{
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:center !important;
+        align-items:center !important;
+
+        width:100% !important;
+
+        padding:8px 0 12px 0 !important;
+
+        box-sizing:border-box !important;
     }
 
-    /* Seekbar row: full width, on its own line */
-    .bar {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        width: 95% !important;
-        margin: 4px auto !important;
-        order: 2 !important;
+    .control{
+        width:95% !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+
+        gap:12px !important;
+
+        padding:5px 0 !important;
     }
 
-    .seekbar {
-        width: 100% !important;
-        margin-left: 0 !important;
-        height: 4px !important;
-        background-color: #4d4d4d !important;
-        border-radius: 2px !important;
-        position: relative !important;
-        cursor: pointer !important;
-        flex: 1 !important;
+    .song-time{
+        white-space:nowrap !important;
+        font-size:12px !important;
+        min-width:80px !important;
     }
 
-    /* .circle {
-        width: 12px !important;
-        height: 12px !important;
-        background-color: white !important;
-        border-radius: 50% !important;
-        position: absolute !important;
-        top: -4px !important;
-        left: 0% !important;
-    } */
+    .bar{
+        width:95% !important;
 
-    /* Control row: on its own line above seekbar */
-    .control {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-around !important;
-        width: 95% !important;
-        order: 1 !important;
+        display:flex !important;
+        align-items:center !important;
+
+        margin-top:6px !important;
     }
 
-    /* Fix song-time wrapping */
-    .song-time {
-        white-space: nowrap !important;
-        font-size: 12px !important;
-        margin-left: 0 !important;
-        min-width: 80px !important;
-    }
-}
+    .seekbar{
+        width:100% !important;
+        height:4px !important;
 
-/* ===== MOBILE FIXES ===== */
-@media (max-width: 1000px) {
+        background:#4d4d4d !important;
 
-    /* Reduce gaps between controls */
-    .playbar .control {
-        height: auto !important;
-        padding: 6px 0 !important;
-        width: 100% !important;
-        gap: 15px !important;
+        border-radius:20px !important;
+
+        position:relative !important;
+
+        overflow:visible !important;
     }
 
-    .sound-control {
-        gap: 8px !important;
-        margin-left: 0 !important;
-        width: auto !important;
+    .circle{
+        width:12px !important;
+        height:12px !important;
+
+        border-radius:50% !important;
+
+        background:white !important;
+
+        position:absolute !important;
+
+        top:50% !important;
+
+        transform:translateY(-50%) !important;
+
+        left:0%;
     }
 
-    .song-time {
-        margin-left: 0 !important;
-        font-size: 12px !important;
-        white-space: nowrap !important;
-    }
-
-    /* Playbar lifted above gesture bar */
-    .playbar {
-        height: auto !important;
-        padding-bottom: 28px !important;
-        padding-top: 6px !important;
-    }
-
-    /* Seekbar full width and centered */
-    .bar {
-        width: 92% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        height: 20px !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .seekbar {
-        width: 100% !important;
-        margin-left: 0 !important;
-        height: 4px !important;
-        background-color: #4d4d4d !important;
-        border-radius: 2px !important;
-        position: relative !important;
-    }
-
-    /* .circle {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    height: 13px !important;
-    width: 13px !important;
-    border-radius: 50% !important;
-    background-color: #1ed760 !important;
-} */
 }
