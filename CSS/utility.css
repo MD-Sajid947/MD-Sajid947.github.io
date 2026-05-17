@@ -1586,10 +1586,6 @@ input[type="text"]:focus {
 /* ===== MOBILE PLAYBAR COMPLETE FIX ===== */
 @media (max-width:1000px) {
 
-    .right{
-        padding-bottom: 150px !important;
-    }
-
     .playbar {
 
 
