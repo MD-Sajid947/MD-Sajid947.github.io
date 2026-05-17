@@ -156,7 +156,7 @@ async function main() {
         }
         if (!pause) {
             currentSong.play().catch(err => {
-                console.log("Autoplay blocked:", err);
+                // console.log("Autoplay blocked:", err);
             });
         }
 
