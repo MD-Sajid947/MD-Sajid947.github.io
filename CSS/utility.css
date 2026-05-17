@@ -1590,11 +1590,11 @@ input[type="text"]:focus {
 
         width: 100% !important;
 
-        box-sizing: border-box !important;
+        height: 115px !important;
 
-        height: 90px !important;
+        bottom: 2px !important;
 
-        bottom: 8px !important;
+        padding: 10px 0 !important;
 
         display: flex !important;
 
@@ -1604,15 +1604,10 @@ input[type="text"]:focus {
 
         align-items: center !important;
 
-        padding: 8px 0 !important;
-
         box-sizing: border-box !important;
     }
 
     .control {
-        gap: 12px !important;
-
-        padding: 5px 0 !important;
 
         width: 95% !important;
 
@@ -1621,28 +1616,38 @@ input[type="text"]:focus {
         align-items: center !important;
 
         justify-content: space-between !important;
+
+        gap: 12px !important;
+
+        padding: 4px 0 !important;
     }
 
     .song-time {
+
         white-space: nowrap !important;
+
         font-size: 12px !important;
+
         min-width: 80px !important;
     }
 
     .bar {
+
         width: 92% !important;
 
-        margin-top: 8px !important;
+        margin-top: 2px !important;
 
         display: flex !important;
 
         align-items: center !important;
 
-        margin-bottom: 80px !important;
+        justify-content: center !important;
     }
 
     .seekbar {
+
         width: 100% !important;
+
         height: 4px !important;
 
         background: #4d4d4d !important;
@@ -1655,12 +1660,14 @@ input[type="text"]:focus {
     }
 
     .circle {
+
         width: 12px !important;
+
         height: 12px !important;
 
         border-radius: 50% !important;
 
-        /* background: white !important; */
+        background: #1ed760 !important;
 
         position: absolute !important;
 
@@ -1671,4 +1678,4 @@ input[type="text"]:focus {
         left: 0%;
     }
 
-}
+} 
