@@ -1594,14 +1594,14 @@ input[type="text"]:focus {
         width: 100% !important;
         height: auto !important;
         padding-top: 10px !important;
-        padding-bottom: env(safe-area-inset-bottom, 16px) !important;
+        padding-bottom: 55px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: center !important;
         box-sizing: border-box !important;
         background-color: #121212 !important;
-        z-index: 999 !important;
+        z-index: 9999 !important;
     }
 
     .playbar .control {
@@ -1612,6 +1612,7 @@ input[type="text"]:focus {
         gap: 12px !important;
         padding: 4px 0 !important;
         height: auto !important;
+        margin-top: 0 !important;
     }
 
     .song-time {
@@ -1623,11 +1624,10 @@ input[type="text"]:focus {
 
     .bar {
         width: 92% !important;
-        margin: 4px auto 8px auto !important;
+        margin: 4px auto 0 auto !important;
         display: flex !important;
         align-items: center !important;
         height: 20px !important;
-        margin-bottom: 0 !important;
     }
 
     .seekbar {
