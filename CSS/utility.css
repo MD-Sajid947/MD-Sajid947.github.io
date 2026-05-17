@@ -1582,22 +1582,27 @@ input[type="text"]:focus {
         margin-left: 20px;
     }
 }
-/* ===== MOBILE SEEKBAR FIX ===== */
+/* ===== MOBILE PLAYBAR COMPLETE FIX ===== */
 @media (max-width: 1000px) {
+
+    /* Make playbar stack vertically */
     .playbar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 6px 0 !important;
+        box-sizing: border-box !important;
     }
 
+    /* Seekbar row: full width, on its own line */
     .bar {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
-        width: 100% !important;
-        padding: 0 10px !important;
-        box-sizing: border-box !important;
+        width: 95% !important;
+        margin: 4px auto !important;
+        order: 2 !important;
     }
 
     .seekbar {
@@ -1608,6 +1613,7 @@ input[type="text"]:focus {
         border-radius: 2px !important;
         position: relative !important;
         cursor: pointer !important;
+        flex: 1 !important;
     }
 
     .circle {
@@ -1618,5 +1624,23 @@ input[type="text"]:focus {
         position: absolute !important;
         top: -4px !important;
         left: 0% !important;
+    }
+
+    /* Control row: on its own line above seekbar */
+    .control {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 95% !important;
+        order: 1 !important;
+    }
+
+    /* Fix song-time wrapping */
+    .song-time {
+        white-space: nowrap !important;
+        font-size: 12px !important;
+        margin-left: 0 !important;
+        min-width: 80px !important;
     }
 }
