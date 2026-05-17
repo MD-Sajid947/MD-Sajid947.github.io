@@ -60,6 +60,12 @@ async function main() {
         cardContainer.addEventListener("click", async event => {
             const card = event.target.closest('.card');
             if (!card || !card.dataset.folder) return;
+
+            const playBtn = document.getElementById("play");
+            if (playBtn) {
+                playBtn.src = "img/pause.png";
+            }
+            
             songs = await getSongs(`Songs/${card.dataset.folder}`);
             renderLibrary(songs);
         });
@@ -141,8 +147,6 @@ async function main() {
             }
         }
         if (!pause) {
-            const playBtn = document.getElementById("play");
-            if (playBtn) playBtn.src = "img/pause.png";
             currentSong.play();
         }
 
@@ -152,6 +156,9 @@ async function main() {
             songInfo.innerHTML = `<p>${fetchSongName}</p>`;
             songInfo.classList.add("animate-on-bar");
         }
+
+        const playBtn = document.getElementById("play");
+        if (playBtn) playBtn.src = "img/pause.png";
 
         // Fetch Time & Duration For Current Song.
         currentSong.addEventListener("timeupdate", () => {
@@ -163,6 +170,7 @@ async function main() {
 
     // renderLibrary: updates the left song list and binds click handlers
     function renderLibrary(newSongs) {
+
         songs = newSongs || [];
         const songUL = document.querySelector(".song-list ul");
         let songNames = [];
@@ -203,6 +211,8 @@ async function main() {
 
         if (songs.length) {
             playMusic(songs[0], 0, true);
+            const playBtn = document.getElementById("play");
+            if (playBtn) playBtn.src = "img/pause.png";
         }
 
         Array.from(songUL.getElementsByTagName("li")).forEach((e, index) => {

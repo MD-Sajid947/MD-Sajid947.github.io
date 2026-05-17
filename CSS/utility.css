@@ -1631,7 +1631,7 @@ input[type="text"]:focus {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
-        justify-content: space-between !important;
+        justify-content: space-around !important;
         width: 95% !important;
         order: 1 !important;
     }
@@ -1695,12 +1695,12 @@ input[type="text"]:focus {
     }
 
     .circle {
-        position: absolute !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        height: 13px !important;
-        width: 13px !important;
-        border-radius: 50% !important;
-        background-color: #1ed760 !important;
-    }
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: 13px !important;
+    width: 13px !important;
+    border-radius: 50% !important;
+    background-color: #1ed760 !important;
+}
 }
