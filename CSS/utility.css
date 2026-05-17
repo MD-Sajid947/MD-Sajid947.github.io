@@ -1645,24 +1645,40 @@ input[type="text"]:focus {
     }
 }
 
-/* ===== MOBILE SEEKBAR FIX ===== */
+/* ===== MOBILE FIXES ===== */
 @media (max-width: 1000px) {
-    .playbar {
-        height: auto !important;
-        padding-bottom: 30px !important;
-        padding-top: 8px !important;
-        justify-content: center !important;
-    }
 
+    /* Reduce gaps between controls */
     .playbar .control {
         height: auto !important;
         padding: 6px 0 !important;
         width: 100% !important;
+        gap: 15px !important;
     }
 
+    .sound-control {
+        gap: 8px !important;
+        margin-left: 0 !important;
+        width: auto !important;
+    }
+
+    .song-time {
+        margin-left: 0 !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Playbar lifted above gesture bar */
+    .playbar {
+        height: auto !important;
+        padding-bottom: 28px !important;
+        padding-top: 6px !important;
+    }
+
+    /* Seekbar full width and centered */
     .bar {
         width: 92% !important;
-        margin: 0 auto 0 auto !important;
+        margin: 0 auto !important;
         padding: 0 !important;
         height: 20px !important;
         display: flex !important;

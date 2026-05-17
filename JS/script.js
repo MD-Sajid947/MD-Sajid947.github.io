@@ -298,16 +298,30 @@ async function main() {
             currentSong.volume = percent / 100;
         };
 
-        seekbar.onclick = (e) => {
+        // Seekbar - works on both desktop (click) and mobile (touch)
+        function handleSeek(clientX) {
             const rect = seekbar.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            let percent = (x / rect.width) * 100;
+            let percent = ((clientX - rect.left) / rect.width) * 100;
             percent = Math.max(0, Math.min(100, percent));
             circle.style.left = percent + "%";
             if (currentSong && !isNaN(currentSong.duration) && currentSong.duration > 0) {
-                currentSong.currentTime = ((currentSong.duration) * percent) / 100;
+                currentSong.currentTime = (currentSong.duration * percent) / 100;
             }
+        }
+
+        seekbar.onclick = (e) => {
+            handleSeek(e.clientX);
         };
+
+        seekbar.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            handleSeek(e.touches[0].clientX);
+        }, { passive: false });
+
+        seekbar.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            handleSeek(e.touches[0].clientX);
+        }, { passive: false });
 
         plus.onclick = () => {
             let current = parseFloat(soundPercent.style.left) || 0;
