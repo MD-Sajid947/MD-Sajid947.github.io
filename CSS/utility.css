@@ -1616,7 +1616,7 @@ input[type="text"]:focus {
         flex: 1 !important;
     }
 
-    .circle {
+    /* .circle {
         width: 12px !important;
         height: 12px !important;
         background-color: white !important;
@@ -1624,7 +1624,7 @@ input[type="text"]:focus {
         position: absolute !important;
         top: -4px !important;
         left: 0% !important;
-    }
+    } */
 
     /* Control row: on its own line above seekbar */
     .control {
@@ -1685,16 +1685,16 @@ input[type="text"]:focus {
         align-items: center !important;
     }
 
-    .seekbar {
+    /* .seekbar {
         width: 100% !important;
         margin-left: 0 !important;
         height: 4px !important;
         background-color: #4d4d4d !important;
         border-radius: 2px !important;
         position: relative !important;
-    }
+    } */
 
-    .circle {
+    /* .circle {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
@@ -1702,5 +1702,5 @@ input[type="text"]:focus {
     width: 13px !important;
     border-radius: 50% !important;
     background-color: #1ed760 !important;
-}
+} */
 }

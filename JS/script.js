@@ -58,16 +58,20 @@ async function main() {
         }
 
         cardContainer.addEventListener("click", async event => {
+
             const card = event.target.closest('.card');
+
             if (!card || !card.dataset.folder) return;
 
+            songs = await getSongs(`Songs/${card.dataset.folder}`);
+
+            renderLibrary(songs);
+
             const playBtn = document.getElementById("play");
+
             if (playBtn) {
                 playBtn.src = "img/pause.png";
             }
-            
-            songs = await getSongs(`Songs/${card.dataset.folder}`);
-            renderLibrary(songs);
         });
 
         return firstFolder;
@@ -158,7 +162,16 @@ async function main() {
         }
 
         const playBtn = document.getElementById("play");
-        if (playBtn) playBtn.src = "img/pause.png";
+
+        if (playBtn) {
+
+            if (pause) {
+                playBtn.src = "img/play-button2.png";
+            }
+            else {
+                playBtn.src = "img/pause.png";
+            }
+        }
 
         // Fetch Time & Duration For Current Song.
         currentSong.addEventListener("timeupdate", () => {
@@ -210,9 +223,7 @@ async function main() {
         songUL.innerHTML = html;
 
         if (songs.length) {
-            playMusic(songs[0], 0, true);
-            const playBtn = document.getElementById("play");
-            if (playBtn) playBtn.src = "img/pause.png";
+            playMusic(songs[0], 0);
         }
 
         Array.from(songUL.getElementsByTagName("li")).forEach((e, index) => {
@@ -231,18 +242,18 @@ async function main() {
     renderLibrary(songs);
 
     // bind card clicks to load folders (cards have data-folder attributes)
-    Array.from(document.querySelectorAll('.card')).forEach(card => {
-        card.addEventListener('click', async () => {
-            const folder = card.dataset.folder;
-            if (!folder) return;
-            try {
-                const newSongs = await getSongs(`Songs/${folder}`);
-                renderLibrary(newSongs);
-            } catch (err) {
-                console.error('Failed to load folder', folder, err);
-            }
-        });
-    });
+    // Array.from(document.querySelectorAll('.card')).forEach(card => {
+    //     card.addEventListener('click', async () => {
+    //         const folder = card.dataset.folder;
+    //         if (!folder) return;
+    //         try {
+    //             const newSongs = await getSongs(`Songs/${folder}`);
+    //             renderLibrary(newSongs);
+    //         } catch (err) {
+    //             console.error('Failed to load folder', folder, err);
+    //         }
+    //     });
+    // });
 
     function handlePlayClick() {
         if (!currentSong) return;
