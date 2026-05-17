@@ -67,15 +67,6 @@ async function main() {
 
             renderLibrary(songs);
 
-            if (songs.length) {
-                playMusic(songs[0], 0);
-            }
-
-            const playBtn = document.getElementById("play");
-
-            if (playBtn) {
-                playBtn.src = "img/pause.png";
-            }
         });
 
         return firstFolder;
@@ -156,7 +147,7 @@ async function main() {
         }
         if (!pause) {
             currentSong.play().catch(err => {
-                // console.log("Autoplay blocked:", err);
+                console.log(err);
             });
         }
 
