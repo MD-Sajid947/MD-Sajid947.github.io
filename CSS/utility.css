@@ -1644,3 +1644,47 @@ input[type="text"]:focus {
         min-width: 80px !important;
     }
 }
+
+/* ===== MOBILE SEEKBAR FIX ===== */
+@media (max-width: 1000px) {
+    .playbar {
+        height: auto !important;
+        padding-bottom: 30px !important;
+        padding-top: 8px !important;
+        justify-content: center !important;
+    }
+
+    .playbar .control {
+        height: auto !important;
+        padding: 6px 0 !important;
+        width: 100% !important;
+    }
+
+    .bar {
+        width: 92% !important;
+        margin: 0 auto 0 auto !important;
+        padding: 0 !important;
+        height: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .seekbar {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: 4px !important;
+        background-color: #4d4d4d !important;
+        border-radius: 2px !important;
+        position: relative !important;
+    }
+
+    .circle {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        height: 13px !important;
+        width: 13px !important;
+        border-radius: 50% !important;
+        background-color: #1ed760 !important;
+    }
+}
