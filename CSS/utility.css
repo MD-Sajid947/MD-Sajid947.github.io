@@ -1585,102 +1585,69 @@ input[type="text"]:focus {
 }
 
 /* ===== MOBILE PLAYBAR COMPLETE FIX ===== */
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
 
     .playbar {
-
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
         width: 100% !important;
-
-        height: 105px !important;
-
-        bottom: 4px !important;
-
-        padding-top: 12px !important;
-
-        padding-bottom: 8px !important;
-
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-bottom: env(safe-area-inset-bottom, 16px) !important;
         display: flex !important;
-
         flex-direction: column !important;
-
         justify-content: flex-start !important;
-
         align-items: center !important;
-
         box-sizing: border-box !important;
-
+        background-color: #121212 !important;
+        z-index: 999 !important;
     }
 
-    .control {
-
+    .playbar .control {
         width: 95% !important;
-
         display: flex !important;
-
         align-items: center !important;
-
         justify-content: space-between !important;
-
         gap: 12px !important;
-
         padding: 4px 0 !important;
+        height: auto !important;
     }
 
     .song-time {
-
         white-space: nowrap !important;
-
         font-size: 12px !important;
-
         min-width: 80px !important;
+        margin-left: 0 !important;
     }
 
     .bar {
-
         width: 92% !important;
-
-        margin-top: 2px !important;
-
+        margin: 4px auto 8px auto !important;
         display: flex !important;
-
         align-items: center !important;
-
-        justify-content: center !important;
-
+        height: 20px !important;
         margin-bottom: 0 !important;
     }
 
     .seekbar {
-
         width: 100% !important;
-
         height: 4px !important;
-
         background: #4d4d4d !important;
-
         border-radius: 20px !important;
-
         position: relative !important;
-
         overflow: visible !important;
+        margin-left: 0 !important;
     }
 
     .circle {
-
         width: 12px !important;
-
         height: 12px !important;
-
         border-radius: 50% !important;
-
         background: #1ed760 !important;
-
         position: absolute !important;
-
         top: 50% !important;
-
-        transform: translateY(-50%) !important;
-
+        transform: translate(-50%, -50%) !important;
         left: 0%;
     }
 
