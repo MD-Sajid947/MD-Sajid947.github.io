@@ -1638,7 +1638,7 @@ input[type="text"]:focus {
 
         align-items: center !important;
 
-        margin-bottom: 80px;
+        margin-bottom: 80px !important;
     }
 
     .seekbar {
