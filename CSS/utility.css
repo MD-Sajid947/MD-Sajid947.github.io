@@ -1586,9 +1586,9 @@ input[type="text"]:focus {
 /* ===== MOBILE PLAYBAR COMPLETE FIX ===== */
 @media (max-width:1000px) {
 
-    .right{
+    /* .right{
         padding-bottom: 25px !important;
-    }
+    } */
 
     .playbar {
 
