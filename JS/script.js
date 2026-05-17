@@ -67,6 +67,10 @@ async function main() {
 
             renderLibrary(songs);
 
+            if (songs.length) {
+                playMusic(songs[0], 0);
+            }
+
             const playBtn = document.getElementById("play");
 
             if (playBtn) {
@@ -151,7 +155,9 @@ async function main() {
             }
         }
         if (!pause) {
-            currentSong.play();
+            currentSong.play().catch(err => {
+                console.log("Autoplay blocked:", err);
+            });
         }
 
         let songInfo = document.querySelector(".song-info");
