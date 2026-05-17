@@ -1588,23 +1588,27 @@ input[type="text"]:focus {
 
     .playbar {
 
+
         width: 100% !important;
 
-        height: 115px !important;
+        height: 105px !important;
 
-        bottom: 2px !important;
+        bottom: 4px !important;
 
-        padding: 10px 0 !important;
+        padding-top: 12px !important;
+
+        padding-bottom: 8px !important;
 
         display: flex !important;
 
         flex-direction: column !important;
 
-        justify-content: center !important;
+        justify-content: flex-start !important;
 
         align-items: center !important;
 
         box-sizing: border-box !important;
+
     }
 
     .control {
@@ -1680,4 +1684,4 @@ input[type="text"]:focus {
         left: 0%;
     }
 
-} 
+}
