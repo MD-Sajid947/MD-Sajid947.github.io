@@ -631,6 +631,7 @@ input[type="text"]:focus {
 
     .right {
         width: 97vw;
+        padding-bottom: 0;
     }
 
     .ham-burger {
