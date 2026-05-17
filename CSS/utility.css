@@ -1586,28 +1586,40 @@ input[type="text"]:focus {
 @media (max-width:1000px){
 
     .playbar{
-        display:flex !important;
-        flex-direction:column !important;
-        justify-content:center !important;
-        align-items:center !important;
 
         width:100% !important;
 
-        padding:8px 0 12px 0 !important;
-
         box-sizing:border-box !important;
+
+        height: 90px !important;
+
+        bottom: 8px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        align-items: center !important;
+
+        padding: 8px 0 !important;
+
+        box-sizing: border-box !important;
     }
 
     .control{
-        width:95% !important;
-
-        display:flex !important;
-        align-items:center !important;
-        justify-content:space-between !important;
-
         gap:12px !important;
 
         padding:5px 0 !important;
+
+        width: 95% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: space-between !important;
     }
 
     .song-time{
@@ -1617,12 +1629,13 @@ input[type="text"]:focus {
     }
 
     .bar{
-        width:95% !important;
+        width: 92% !important;
 
-        display:flex !important;
-        align-items:center !important;
+        margin-top: 8px !important;
 
-        margin-top:6px !important;
+        display: flex !important;
+
+        align-items: center !important;
     }
 
     .seekbar{
@@ -1655,4 +1668,11 @@ input[type="text"]:focus {
         left:0%;
     }
 
+    .playbar{
+
+        
+    }
+
 }
+
+
