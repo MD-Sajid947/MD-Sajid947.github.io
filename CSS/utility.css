@@ -1685,14 +1685,14 @@ input[type="text"]:focus {
         align-items: center !important;
     }
 
-    /* .seekbar {
+    .seekbar {
         width: 100% !important;
         margin-left: 0 !important;
         height: 4px !important;
         background-color: #4d4d4d !important;
         border-radius: 2px !important;
         position: relative !important;
-    } */
+    }
 
     /* .circle {
     position: absolute !important;
