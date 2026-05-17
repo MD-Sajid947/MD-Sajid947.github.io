@@ -4,27 +4,12 @@ let currfolder;
 
 async function getSongs(folder) {
     currfolder = folder.replace(/\\/g, '/');
-    const url = `http://127.0.0.1:3000/${currfolder}/`;
+    const url = `/${currfolder}/songs.json`;
     let a = await fetch(encodeURI(url));
     if (!a.ok) {
         throw new Error(`Failed to load ${url}: ${a.status} ${a.statusText}`);
     }
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    let songs = [];
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            const decodedPath = decodeURIComponent(new URL(element.href).pathname);
-            const parts = decodedPath.split(/[/\\]/).filter(Boolean);
-            const track = parts.pop();
-            if (track) {
-                songs.push(track);
-            }
-        }
-    }
+    let songs = await a.json();
     return songs;
 }
 
@@ -32,58 +17,33 @@ async function getSongs(folder) {
 async function main() {
 
     async function displayAlbums() {
-        const baseUrl = `http://127.0.0.1:3000/Songs/`;
-        let a = await fetch(baseUrl);
-        if (!a.ok) {
-            console.error(`Failed to load album list: ${baseUrl}`, a.status, a.statusText);
-            return null;
-        }
-
-        let response = await a.text();
-        let div = document.createElement("div");
-        div.innerHTML = response;
-        let anchors = Array.from(div.getElementsByTagName("a"));
         let cardContainer = document.querySelector(".card-container");
         if (!cardContainer) {
             console.error("card-container not found in DOM");
             return null;
         }
 
+        let a = await fetch('/Songs/albums.json');
+        if (!a.ok) {
+            console.error('Failed to load albums.json');
+            return null;
+        }
+        let folders = await a.json();
+
         let firstFolder = null;
-        for (const e of anchors) {
-            const rawHref = e.getAttribute("href");
-            if (!rawHref || rawHref.startsWith("../")) {
-                continue;
-            }
-
-            const url = new URL(rawHref, baseUrl);
-            const pathname = decodeURIComponent(url.pathname);
-            if (!pathname.startsWith("/Songs/")) {
-                continue;
-            }
-
-            const normalizedPath = pathname.replace(/\\/g, '/');
-            const folderName = normalizedPath.replace(/\/$/, '').split('/').pop();
-            if (!folderName || folderName === "Songs" || folderName.includes('.')) {
-                continue;
-            }
-
-            if (!firstFolder) {
-                firstFolder = folderName;
-            }
-
+        for (const folderName of folders) {
             let infoResponse;
             try {
-                infoResponse = await fetch(encodeURI(`http://127.0.0.1:3000/Songs/${folderName}/info.json`));
+                infoResponse = await fetch(encodeURI(`/Songs/${folderName}/info.json`));
             } catch (err) {
                 console.warn(`Failed to fetch info.json for folder ${folderName}`, err);
                 continue;
             }
-            if (!infoResponse.ok) {
-                continue;
-            }
+            if (!infoResponse.ok) continue;
 
             let metadata = await infoResponse.json();
+            if (!firstFolder) firstFolder = folderName;
+
             cardContainer.innerHTML += `<div data-folder="${folderName}" class="card">
                         <div class="music-img">
                             <div class="circular">
