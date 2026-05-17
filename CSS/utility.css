@@ -1642,6 +1642,8 @@ input[type="text"]:focus {
         align-items: center !important;
 
         justify-content: center !important;
+
+        margin-bottom: 0 !important;
     }
 
     .seekbar {
