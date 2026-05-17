@@ -1587,7 +1587,7 @@ input[type="text"]:focus {
 @media (max-width:1000px) {
 
     .right{
-        padding-bottom: 140px !important;
+        padding-bottom: 25px !important;
     }
 
     .playbar {
