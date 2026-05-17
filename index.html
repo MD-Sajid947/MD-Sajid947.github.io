@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/utility.css">
+    <script src="JS/script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- Whole Webpage -->
+    <main class="bg-black">
+
+        <!-- Top Section -->
+        <div class="navbar border bg-black">
+
+            <div class="nav-text flex">
+
+                <div class="left-png flex">
+                    <div class="logo-img png logo cursor">
+                        <img class="white-svg" src="img/logo.svg" alt="Logo-Img">
+                    </div>
+                    <div class="home png bg-grey cursor">
+                        <img class="white-svg" src="img/home.svg" alt="Home-Img">
+                    </div>
+                </div>
+
+                <div class="search-bar flex bg-grey">
+
+                <div class="search-img cursor">
+                    <img class="white-svg" src="img/search.svg" alt="Search-Png">
+                </div>
+
+                <div class="search-text">
+                    <input type="text" placeholder="What do you want to play?">
+                </div>
+
+                <div class="search-line">
+                    <div class="line"></div>
+                </div>
+
+                <div class="search-browse cursor">
+                    <img class="white-svg" src="img/browse.svg" alt="Browse-Png">
+                </div>
+
+            </div>
+
+                <div class="text-up-down">
+
+                    <div class="right-text">
+                        <div class="premium-text right-text text font-style cursor">
+                            <p>Premium</p>
+                        </div>
+
+                        <div class="support-text right-text text font-style cursor">
+                            <p>Support</p>
+                        </div>
+
+                        <div class="download-text right-text text font-style cursor">
+                            <p>Download</p>
+                        </div>
+
+                        <div class="seprate-line">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="left-text">
+                        <div class="download-text left-text font-style cursor">
+                            <div class="download-img">
+                                <img class="white-svg" src="img/download.svg" alt="Download-Png">
+                            </div>
+                            <p>Install App</p>
+                        </div>
+
+                        <div class="signup-text left-text font-style cursor">
+                            <p>Signup</p>
+                        </div>
+
+                        <div class="login-text left-text font-style cursor">
+
+                            <button class="login">Log in</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom flex">
+
+            <!-- Left Section -->
+            <div class="left border bg-darkgrey">
+                <div class="top-content m1">
+                    <div class="hide-bar"><img class="white-svg sliding-img" src="img/hide-bar.svg" alt="hide-Bar.Png">
+                    </div>
+                    <div class="library-text">
+                        <h1 class="library-h target-text">Your Library</h1>
+                    </div>
+                    <div class="library-img cursor"><img class="white-svg" src="img/Add.svg" alt="Add-Png"></div>
+                </div>
+
+                <div class="song-list">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right spotify-playlist">
+                <div id="right-head">
+                    <div class="more-img ham-burger">
+                        <img class="white-svg" src="img/more.png" alt="Ham-Buger.Png">
+                    </div>
+                    <h2>Trending songs</h2>
+                </div>
+
+                <div class="card-container">
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Play Bar -->
+        <div class="playbar">
+
+            <div class="control">
+                <div class="song-time">
+                    00:00 / 00:00
+                </div>
+                <div class="control-img">
+                    <img id="previous" class="white-svg" src="img/Backward.png" alt="Backward-Button">
+                    <img itemid="play" class="white-svg" id="play" src="img/play-button2.png" alt="Play-Button">
+                    <img id="next" class="white-svg" src="img/Forward.png" alt="Forward-Button">
+                </div>
+                <div class="song-info-parent">
+                    <div class="song-info">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar">
+                <div class="seekbar">
+                    <div class="circle">
+
+                    </div>
+                </div>
+                <div class="sound-control">
+                    <img class="mute-sound white-svg" src="img/sound-on.png" alt="sound-icon">
+
+                    <div class="up-down opacity">
+                        <p class="plus-minus" id="minus">
+                            <img class="white-svg" src="img/minus.png" alt="Soung-Minus.Png">
+                        </p>
+                        <div class="sound-line">
+                            <div class="sound-percent"></div>
+                        </div>
+                        <p class="plus-minus" id="plus">
+                            <img class="white-svg" src="img/plus.png" alt="Soung-plus.Png">
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
